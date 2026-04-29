@@ -21,15 +21,29 @@ Maison de Rawan is a high-end jewelry brand website that offers a seamless shopp
 ### 3. Data & API Integration
 * JSON Database: All product information (30+ items) is stored in structured JSON format.
 * Simple API Concept: Implements AJAX/Fetch to simulate a real-world backend environment.
-
-##  Project Structure
+ 
+### 4. How to Run
+* Clone the repository to your local machine.
+* Open index.html in any modern web browser.
+* To test the API functionality, ensure you are connected to the internet (for the POST simulation) and viewing through a local server environment.
+  
+### 5. Project Structure
 project/
-├── index.html          # Homepage with luxury slider
-├── shop.html           # Products page with filtering & comparison table
-├── about.html          # Brand story page
-├── contact.html        # Contact form with validation
-├── style.css           # External styling (Layout, Colors, Typography)
-├── script.js           # Main logic (API, Validation, Cart, Slider)
-├── products.json       # Product data source
-├── db.json             # Database backup
-└── img/                # High-quality product imagery
+├── index.html         
+# Homepage with luxury slider
+├── shop.html          
+# Products page with filtering & comparison table
+├── about.html          
+# Brand story page
+├── contact.html      
+# Contact form with validation
+├── style.css         
+# External styling (Layout, Colors, Typography)
+├── script.js        
+# Main logic (API, Validation, Cart, Slider)
+├── products.json    
+# Product data source
+├── db.json         
+# Database backup
+└── img/           
+# High-quality product imagery
