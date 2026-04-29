@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shop - Maison de Rawan</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section id="header">
+        <a href="index.html"><img src="img/logo.png" class="logo" alt="logo"></a>
+        <ul id="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+    <a href="javascript:void(0)" id="shop-link">Shop <i class="fa fa-caret-down"></i></a>
+    <ul class="dropdown-menu" id="dropdown-menu">
+        <li><a href="shop.html?cat=Rings">Rings</a></li>
+        <li><a href="shop.html?cat=Necklace">Necklaces</a></li>
+        <li><a href="shop.html?cat=Earrings">Earrings</a></li>
+    
+        <li><hr style="margin: 5px 0; border: 0.5px solid #eee;"></li>
+        
+        <li><a href="shop.html?type=Indian" style="color: black; font-weight: bold;">Indian Collection </a></li>
+        <li><a href="shop.html?type=Limited" style="color: black; font-weight: bold;">Limited Edition </a></li>
+        <li><hr style="margin: 5px 0; border: 0.5px solid #eee;"></li>
+        <li><a href="shop.html">View All Products</a></li>
+    </ul>
+</li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="cart.html"><i class="fa fa-shopping-bag"></i></a></li>
+        </ul>
+    </section>
+<section id="product1" class="section-p1">
+    <div id="shop-container" class="pro-container"></div>
+</section>
+
+<script src="script.js">
+    productContainer.innerHTML += `
+    <div class="pro">
+        <img src="${product.image}" alt="">
+        <div class="des">
+            <span>${product.brand}</span>
+            <h5>${product.name}</h5>
+            <h4>EGP ${product.price}</h4>
+        </div>
+        <a href="#" class="add-cart-btn"><i class="fal fa-shopping-cart"></i></a>
+    </div>
+`;
+</script>
+</body>
+</html>

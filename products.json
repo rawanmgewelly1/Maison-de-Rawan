@@ -1,0 +1,160 @@
+[
+  { "id": 1, "name": "Maharani Essence",
+   "price": "68,000",
+    "image": "img/in-1.jpg",
+     "category": "Indian",
+      "collection": "Indian"
+},
+ { "id": 2, "name": "Zarina",
+   "price": "112,000",
+    "image": "img/in-2.jpg",
+     "category": "Indian",
+      "collection": "Indian"
+},
+ { "id": 3, "name": "Saffron Luxe Set",
+   "price": "120,000",
+    "image": "img/in-3.jpg",
+     "category": "Indian",
+      "collection": "Indian"
+}, { "id": 4, "name": "Indira Royal Chain",
+   "price": "59,000",
+    "image": "img/in-4.jpg",
+     "category": "Indian",
+      "collection": "Indian"
+}, { "id": 5, "name": "Rajputana Glow Earrings",
+   "price": "98,000",
+    "image": "img/in-5.jpg",
+     "category": "Indian",
+      "collection": "Indian"
+}, { "id": 6, "name": "Noor Mahal",
+   "price": "63,000",
+    "image": "img/in-6.jpg",
+     "category": "Indian",
+      "collection": "Indian"
+},{ "id": 7, "name": "Eclipse Sovereign Necklace",
+   "price": "155,000",
+    "image": "img/li-2.jpg",
+     "category": "Limited",
+      "collection": "Limited"
+},{ "id": 8, "name": "Imperial Shadow Brouch",
+   "price": "175,000",
+    "image": "img/li-5.jpg",
+     "category": "Limited",
+      "collection": "Limited"
+},{ "id": 9, "name": "Celestial Queen Earrings",
+   "price": "118,000",
+    "image": "img/li-8.jpg",
+     "category": "Limited",
+      "collection": "Limited"
+},{ "id": 10, "name": "The Eternal Crown Watch",
+   "price": "275,000",
+    "image": "img/li-9.jpg",
+     "category": "Limited",
+      "collection": "Limited"
+},{ "id": 11, "name": "Astra Glow Earrings",
+   "price": "39,000",
+    "image": "img/ear-1.jpg",
+     "category": "Earrings",
+      "collection": "Earrings"
+},{ "id": 12, "name": "Celeste Shine Earrings",
+   "price": "75,000",
+    "image": "img/ear-2.jpg",
+     "category": "Earrings",
+      "collection": "Earings"
+},{ "id": 13, "name": "Velvet Drop Earrings",
+   "price": "39,000",
+    "image": "img/ear-3.jpg",
+     "category": "Earrings",
+      "collection": "Earings"
+},{ "id": 14, "name": "Luxe Whisper Earrings",
+   "price": "85,000",
+    "image": "img/ear-4.jpg",
+     "category": "Earrings",
+      "collection": "Earings"
+},{ "id": 15, "name": "Aurora Gleam Earrings",
+   "price": "92,000",
+    "image": "img/ear-5.jpg",
+     "category": "Earrings",
+      "collection": "Earings"
+},{ "id": 16, "name": "Ethereal Spark Earrings",
+   "price": "57,000",
+    "image": "img/ear-6.jpg",
+     "category": "Earrings",
+      "collection": "Earings"
+},{ "id": 17, "name": "Golden Dusk Earrings",
+   "price": "61,000",
+    "image": "img/ear-7.jpg",
+     "category": "Earrings",
+      "collection": "Earrings"
+},{ "id": 18, "name": "Indian Celestial Drip",
+   "price": "49,000",
+    "image": "img/ear-8.jpg",
+     "category": "Earrings",
+      "collection": "Earings"
+},{ "id": 19, "name": "Elysian Veil Ring",
+   "price": "75,000",
+    "image": "img/ring-1.jpg",
+     "category": "Rings",
+      "collection": "Rings"
+},{ "id": 20, "name": "Noir Legacy Ring",
+   "price": "42,000",
+    "image": "img/ring-3.jpg",
+     "category": "Rings",
+      "collection": "Rings"
+},{ "id": 21, "name": "Aurelia Crown Ring",
+   "price": "63,000",
+    "image": "img/ring-8.jpg",
+     "category": "Rings",
+      "collection": "Rings"
+},{ "id": 22, "name": "Velour Eclipse Ring",
+   "price": "48,000",
+    "image": "img/ring-5.jpg",
+     "category": "Rings",
+      "collection": "Rings"
+},{ "id": 23, "name": "Seraphine Glow Ring",
+   "price": "56,000",
+    "image": "img/ring-6.jpg",
+     "category": "Rings",
+      "collection": "Rings"
+},{ "id": 24, "name": "Obsidian Grace Ring",
+   "price": "72,000",
+    "image": "img/ring-7.jpg",
+     "category": "Rings",
+      "collection": "Rings"
+},{ "id": 25, "name": "Imperial Dusk Ring",
+   "price": "44,000",
+    "image": "img/ring-9.jpg",
+     "category": "Rings",
+      "collection": "Rings"
+},{ "id": 26, "name": "Luna Heirloom Necklace",
+   "price": "7,800",
+    "image": "img/n1.jpg",
+     "category": "Necklace",
+      "collection": "Necklace"
+},{ "id": 27, "name": "Velvet Aura Necklace",
+   "price": "8,500",
+    "image": "img/n2.jpg",
+     "category": "Necklace",
+      "collection": "Necklace"
+},{ "id": 28, "name": "Eternal Muse Necklace",
+   "price": "9,200",
+    "image": "img/n3.jpg",
+     "category": "Necklace",
+      "collection": "Necklace"
+},{ "id": 29, "name": "Nocturne Halo Necklace",
+   "price": "9,000",
+    "image": "img/n4.jpg",
+     "category": "Necklace",
+      "collection": "Necklace"
+},{ "id": 30, "name": "Golden Reverie Necklace",
+   "price": "10,500",
+    "image": "img/n5.jpg",
+     "category": "Necklace",
+      "collection": "Necklace"
+},{ "id": 31, "name": "Celestial Drip Necklace",
+   "price": "9,800",
+    "image": "img/n6.jpg",
+     "category": "Necklace",
+      "collection": "Necklace"
+}
+]

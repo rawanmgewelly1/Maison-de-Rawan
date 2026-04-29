@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Heritage Gold Ring",
+    "price": "75,000",
+    "description": "Hand-etched 18k solid gold inspired by ancient motifs."
+  },
+  {
+    "id": 2,
+    "name": "Ancestral Band",
+    "price": "62,000",
+    "description": "A timeless band celebrating handcrafted perfection."
+  },
+  {
+    "id": 3,
+    "name": "The Odyssey Pendant",
+    "price": "120,000",
+    "description": "A statement piece reflecting the soul of the artisan."
+  },
+  {
+    "id": 4,
+    "name": "Moonlight Hoops",
+    "price": "42,000",
+    "description": "Elegant earrings designed for the modern connoisseur."
+  },
+  {
+    "id": 5,
+    "name": "Celestial Link Bracelet",
+    "price": "92,000",
+    "description": "A golden link to the past, forged for the future."
+  }
+]

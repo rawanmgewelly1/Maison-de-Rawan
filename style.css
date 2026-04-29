@@ -1,0 +1,634 @@
+/* 1. استيراد الخطوط الفخمة والمتناسقة */
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,700;6..96,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');   
+    
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* الخط الأساسي Jost: عصري، رفيع، وأنيق جداً */
+    font-family: 'Jost', sans-serif;
+}
+
+:root {
+    --gold: #bc9355;
+    --dark: #222;
+    --text-muted: #465b52;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--dark);
+}
+
+h1 { font-size: 50px; line-height: 64px; }
+h2 { font-size: 46px; line-height: 54px; }
+h4 { font-size: 20px; font-weight: 500; }
+
+p {
+    font-size: 16px;
+    color: var(--text-muted);
+    margin: 15px 0 20px 0;
+    font-weight: 300;
+}
+
+.section-p1 { padding: 40px 80px; }
+.section-m1 { margin: 40px 0; }
+
+body { width: 100%; background-color: #fff; }
+
+/*/////////// Header //////////*/
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 80px; 
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    position: sticky;
+    z-index: 999;
+    top: 0;
+    left: 0;
+}
+
+.logo { width: 110px; height: auto; }
+
+#navbar { display: flex; align-items: center; }
+
+#navbar li { list-style: none; padding: 0 20px; position: relative; }
+
+#navbar li a {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--dark);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+#navbar li a:hover, #navbar li a.active { color: var(--gold); }
+
+#navbar li a.active::after, #navbar li a:hover::after {
+    content: "";
+    width: 30%;
+    height: 1px;
+    background: var(--gold);
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+
+/*/////////// Hero Section //////////*/
+#hero {
+    position: relative; 
+    width: 100%;
+    height: 100vh; 
+    overflow: hidden;
+    display: flex;
+    justify-content: center; 
+    /* التعديل: نزلنا الكلام لتحت باستخدام flex-end */
+    align-items: flex-end; 
+    /* التعديل: مسافة من القاع عشان ميبقاش لازق في الشاشة من تحت */
+    padding-bottom: 100px; 
+}
+
+#hero .hero-img {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover; 
+    z-index: 1;
+}
+
+#hero::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4); 
+    z-index: 2;
+}
+
+#hero-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    max-width: 900px;
+}
+
+#hero-content h2 {
+    font-family: 'Libre Baskerville', serif !important; 
+    font-size: 4rem; 
+    font-weight: 700; 
+    line-height: 1.2;
+    /* التعديل: زودنا المسافة بين العنوان الكبير والصغير */
+    margin-bottom: 35px; 
+    color: #ffffff;
+    letter-spacing: 1px; 
+    text-transform: capitalize; 
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.3); 
+} 
+
+#hero-content h4 {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    letter-spacing: 10px; 
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.8);
+    /* التعديل: زودنا المسافة بين الكلام الصغير والزرار */
+    margin-bottom: 60px; 
+}
+
+/* زر الـ Shop البروفيشنال */
+.shop-btn {
+    font-family: 'Jost', sans-serif;
+    display: inline-block;
+    padding: 15px 45px;
+    background-color: transparent; 
+    color: white; 
+    border: 1px solid rgba(255,255,255,0.5); 
+    text-decoration: none; 
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 4px; 
+    transition: 0.4s ease; 
+    text-transform: uppercase;
+    /* تأكيد لضمان المسافة */
+    margin-top: 10px; 
+}
+
+.shop-btn:hover {
+    background-color: white;
+    color: #000;
+    border-color: white;
+}
+.fe-section {
+    display: flex;         /* عشان الصور تيج جنب بعض */
+    height: 100vh;        /* عشان تاخد طول الشاشة كله زي الصورة */
+    gap: 5px;             /* مسافة صغيرة جداً بين الصور */
+}
+
+.img-box {
+    flex: 1;              /* دي بتخلي الـ 3 صور يقسموا الشاشة بالتساوي */
+    position: relative;    /* مهمة جداً عشان نعرف نحط الكلام فوق الصورة */
+    overflow: hidden;      /* عشان لما الصورة تكبر متطلعش بره الصندوق */
+    text-decoration: none; /* بنشيل الخط اللي تحت اللينك */
+}
+
+.img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;    /* عشان الصورة متتمطش وتملى مكانها صح */
+    transition: 0.5s;     /* سرعة الحركة لما ندوس أو نقف عليها */
+}
+
+.img-box span {
+    position: absolute;    /* بنخرج الكلام من مكانه الطبيعي */
+    bottom: 30px;          /* بنثبته تحت */
+    left: 50%;             /* بنجيبه في النص */
+    transform: translateX(-50%); /* تكملة التوسيط في النص بالظبط */
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;   /* بنخلي الحروف بعيدة عن بعض شوية للشياكة */
+}
+
+/* الحركة (Hover Effect) */
+.img-box:hover img {
+    transform: scale(1.1); /* لما تقفي عليها الصورة تكبر شوية "Zoom" */
+    filter: brightness(80%); /* الصورة تضلم سنة فـ الكلام يوضح أكتر */
+}
+
+/* السيكشن الأساسي زي ما هو */
+#new-arrivals {
+    text-align: center;
+    padding: 80px 40px; /* مسافة من فوق وتحت ويمين وشمال */
+    background-color: #fff;
+}
+
+.slider-wrapper {
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+}
+
+#new-arrivals .pro-container {
+    display: flex;
+    justify-content: center; /* توسيط المنتجات */
+    flex-wrap: wrap;        /* ده أهم سطر عشان المنتجات تنزل سطر جديد */
+    gap: 25px;              /* مسافة ثابتة وموحدة بين كل كارت والتاني */
+    padding-top: 40px;
+}
+
+.pro-container::-webkit-scrollbar {
+    display: none;          /* إخفاء السكرول في كروم */
+}
+
+#new-arrivals .pro {
+    width: 23%;            /* عشان يشيل 4 منتجات في الصف */
+    min-width: 250px;      /* عشان ميبقاش صغير في الشاشات الوسط */
+    padding: 10px 12px;
+    border: 1px solid #f0f0f0;
+    border-radius: 15px;   /* حواف ناعمة */
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+    transition: 0.3s ease;
+    background-color: #fff;
+    position: relative;
+}
+#new-arrivals .pro:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transform: translateY(-5px); /* حركة بسيطة لفوق عند الهوفر */
+}
+/* 3. تنسيق اسم المنتج */
+.pro .des h5 {
+    color: #000;
+    font-size: 16px;
+    font-weight: 500; /* تقل متوسط عشان يبقى واضح */
+    line-height: 1.4; /* مسافة بين السطور لو الاسم طويل ونزل على سطرين */
+    margin: 0; /* تصفير المارجن القديم */
+    text-transform: capitalize;
+}
+
+#new-arrivals .pro img {
+    width: 100%;
+    height: 300px;         /* ارتفاع ثابت لكل الصور */
+    object-fit: cover;     /* بيخلي الصورة تملا المساحة من غير ما تتمط */
+    border-radius: 12px;
+}
+
+/* 2. تظبيط منطقة الكلام (الوصف) */
+.pro .des {
+    padding: 15px;
+    background-color: #fff;
+    text-align: left;
+}
+
+/* 4. تنسيق الأسهم (الجديد) */
+/* تنسيق الأسهم */
+#new-arrivals .slide-button {
+    display: none; /* إخفاء الأسهم لو مش محتاجة سكرول عرضي */
+}
+.slide-button:hover {
+    background-color: #bc9355; /* لون البراند عند الهوفر */
+    color: white;
+    border-color: #bc9355;
+}
+#prev-slide { left: 20px; }  /* عدلت المسافة عشان تكون جوه الـ padding */
+#next-slide { right: 20px; }
+.heritage-artisan {
+    padding: 0; /* شيلنا الـ 5% عشان الصورة تلمس الحواف */
+    margin: 0;
+    width: 100%;
+    background-color: #fff;
+}
+
+/* 2. الكونتينر: لازم نلغي الـ 1200px عشان يفرش */
+.heritage-container {
+    width: 100%;
+    max-width: none; /* لغينا القفل اللي كان حابس العرض */
+    margin: 0;
+}
+
+/* 3. حاوية الصورة: نخليها Full Width */
+.heritage-image {
+    position: relative;
+    width: 100%;
+    height: 90vh; /* طول الصورة (90% من الشاشة) */
+    overflow: hidden;
+}
+
+.heritage-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* دي اللي بتضمن إن الصورة تفرش وتغطي كل الفراغات */
+    display: block; /* بيشيل فراغ صغير بيبقى تحت الصور ديفولت */
+    filter: brightness(0.85); /* تغميق سنة عشان الكلام ينطق */
+}
+
+/* 4. صندوق النص: نرجعه ياخد مسافته من حافة الشاشة */
+.heritage-content {
+    position: absolute;
+    bottom: 15%; /* رفعناه سنة كمان عشان ميبقاش لازق تحت */
+    left: 8%;
+    max-width: 550px; /* كبرنا العرض سنة عشان الجمل تاخد راحتها */
+    color: #ffffff;   /* اللون الأبيض الصريح */
+    z-index: 10;
+}
+
+.heritage-content h2 {
+    font-size: 4rem;      /* حجم كبير وفخم */
+    font-weight: 700;      /* خليه Bold عشان "ينطق" */
+    color: #ffffff;        /* تأكيد اللون الأبيض */
+    margin-bottom: 15px;   /* مسافة بين العنوان والبرجراف */
+    line-height: 1.1;      /* مسافة بين السطور جوه العنوان نفسه */
+    letter-spacing: 1px;   /* مسافة بسيطة بين الحروف عشان ميبقاش "ملزق" */
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5); /* ظل خفيف ورا الكلام عشان يبرز من الصورة */
+}
+
+.heritage-content p {
+    font-size: 1.2rem;     /* كبرنا الخط سنة */
+    line-height: 1.8;      /* أهم سطر: ده اللي بيخلي الكلام "متنفس" ومش ملزق في بعضه */
+    font-weight: 500;      /* خليناه متوسط التقل عشان يبقى مقروء */
+    margin-bottom: 35px;   /* مسافة قبل اللينك */
+    color: rgba(255, 255, 255, 0.95); /* أبيض صريح مع شفافية بسيطة جداً */
+}
+
+/* اللينك (Explore the collection) */
+.explore-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 700;      /* خليه Bold */
+    text-transform: uppercase;
+    letter-spacing: 3px;   /* مسافة واسعة بين الحروف بتدي شكل فخم */
+    border-bottom: 2px solid #ffffff; /* خط أتخن شوية */
+    padding-bottom: 8px;
+    transition: 0.3s ease;
+}
+
+.explore-link:hover {
+    background-color: #ffffff;
+    color: #000000;        /* يقلب أسود لما تقفي عليه */
+    padding: 8px 15px;     /* مساحة تظهر لما تقفي عليه */
+}
+
+/* باقي الـ CSS بتاع الـ h2 و الـ p واللينك خليه زي ما هو تمام جداً */
+
+/* صفحة المتجر - Shop */
+#page-header {
+    width: 100%;
+    height: 40vh;
+    background-image: url("img/banner.jpg"); /* حطي صورة بانر فخمة هنا */
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 14px;
+}
+#page-header h2, #page-header p { color: #fff; }
+
+/* صفحة السلة - Cart */
+#cart { overflow-x: auto; padding: 80px 80px; }
+#cart table { width: 100%; border-collapse: collapse; table-layout: fixed; white-space: nowrap; }
+#cart table img { width: 70px; }
+#cart table td:nth-child(1) { width: 100px; text-align: center; }
+#cart table td:nth-child(2) { width: 150px; text-align: center; }
+#cart table td:nth-child(3) { width: 250px; text-align: center; }
+#cart table td:nth-child(4), #cart table td:nth-child(5), #cart table td:nth-child(6) { width: 150px; text-align: center; }
+#cart table td { padding-top: 30px; font-size: 14px; }
+#cart-add { display: flex; flex-wrap: wrap; justify-content: space-between; padding: 80px; }
+.subtotal { width: 50%; margin-bottom: 30px; border: 1px solid #e2e9e1; padding: 30px; }
+.subtotal table { border-collapse: collapse; width: 100%; margin-bottom: 20px; }
+.subtotal table td { width: 50%; border: 1px solid #e2e9e1; padding: 10px; font-size: 13px; }
+
+/* صفحة المدونة - Blog */
+#blog { padding: 150px 150px 0 150px; }
+.blog-box { display: flex; align-items: center; width: 100%; position: relative; padding-bottom: 90px; }
+.blog-img { width: 50%; margin-right: 40px; }
+.blog-img img { width: 100%; height: 300px; object-fit: cover; }
+.blog-details { width: 50%; }
+.blog-details a { text-decoration: none; font-size: 11px; color: #000; font-weight: 700; position: relative; transition: 0.3s; }
+.blog-details a::after { content: ""; width: 50px; height: 1px; background-color: #000; position: absolute; top: 4px; right: -60px; }
+
+/* صفحة من نحن - About */
+#about-head { display: flex; align-items: center; padding: 80px; }
+#about-head img { width: 50%; height: auto; }
+#about-head div { padding-left: 40px; }
+
+/* صفحة التواصل - Contact */
+#contact-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#contact-details .details {
+    width: 40%;
+}
+
+#contact-details .details span,
+#form-details form span {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #555;
+}
+
+#contact-details .details h2,
+#form-details form h2 {
+    font-size: 26px;
+    line-height: 35px;
+    padding: 20px 0;
+}
+
+#contact-details .details h3 {
+    font-size: 16px;
+    padding-bottom: 15px;
+}
+
+#contact-details .details li {
+    list-style: none;
+    display: flex;
+    padding: 10px 0;
+}
+
+#contact-details .details li i {
+    font-size: 14px;
+    padding-right: 22px;
+}
+
+#contact-details .details li p {
+    margin: 0;
+    font-size: 14px;
+}
+
+#contact-details .map {
+    width: 55%;
+    height: 400px;
+}
+
+#contact-details .map iframe {
+    width: 100%;
+    height: 100%;
+}
+
+#form-details {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px;
+    padding: 80px;
+    border: 1px solid #e2e9e1;
+}
+
+#form-details form {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#form-details form input,
+#form-details form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    outline: none;
+    margin-bottom: 20px;
+    border: 1px solid #e1e1e1;
+}
+
+#form-details form button {
+    background-color: #000;
+    color: #fff;
+    padding: 12px 30px;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+#form-details form button:hover {
+    background-color: #444;
+}
+
+#shop-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* ده اللي بيخليهم ينزلوا سطر جديد لما يكملوا 4 */
+    gap: 20px;
+    padding: 20px;
+}
+
+
+
+.pro:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+#shop-container .pro {
+    width: 23%;            /* عشان يشيل 4 في الصف */
+    min-width: 280px;      /* زودي العرض شوية عشان الصور البورتريه تفرش */
+    padding: 0;            /* أهم خطوة: شيلنا الـ Padding خالص عشان الصورة تلمس البرواز */
+    border: 1px solid #cce7d0;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+    margin: 15px 0;
+    transition: 0.2s ease;
+    background-color: #fff;
+    overflow: hidden;      /* عشان الحواف الدائرية بتاعة الكارت تشمل الصورة */
+}
+
+/* تعديل الصورة */
+#shop-container .pro img {
+    width: 100%;
+    height: 400px;         /* ثبتنا ارتفاع فخم وبورتريه */
+    object-fit: cover;     /* رجعناها cover عشان تملا المساحة تماماً */
+    object-position: center top; /* أهم سطر: بيخلي الـ Zoom يبدأ من فوق عشان رأس السلسلة ميتشالش */
+    border-radius: 20px 20px 0 0; /* دائرية من فوق بس */
+}
+
+/* تظبيط منطقة الكلام */
+#shop-container .pro .des {
+    text-align: start;
+    padding: 15px 15px 10px 15px; /* رجعنا المسافات للكلام بس */
+}
+
+#shop-container .pro .des span {
+    color: #606063;
+    font-size: 12px;
+}
+
+#shop-container .pro .des h5 {
+    padding-top: 5px;
+    color: #1a1a1a;
+    font-size: 14px;
+}
+
+#shop-container .pro .des h4 {
+    padding-top: 5px;
+    font-size: 15px;
+    font-weight: 700;
+    color: black /* لون البراند الذهبي */
+}
+/* تنسيق زرار أضف للعربة داخل الكارت */
+/* 1. التنسيق النهائي لأيقونة السلة (أسود سادة وبدون دائرة) */
+#shop-container .pro a, 
+.pro .add-cart-btn {
+    background: transparent !important; /* حذف أي خلفية */
+    border: none !important;            /* حذف أي حدود */
+    box-shadow: none !important;        /* حذف الظلال */
+    color: #000000 !important;          /* اللون أسود صريح */
+    
+    font-size: 22px;                    /* حجم الأيقونة */
+    position: absolute;
+    bottom: 25px;                       /* المسافة من أسفل الكارت */
+    right: 20px;                        /* المسافة من اليمين */
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    cursor: pointer;
+    transition: 0.3s ease;
+    text-decoration: none;
+}
+
+/* 2. تأثير عند تمرير الماوس */
+#shop-container .pro a:hover, 
+.pro .add-cart-btn:hover {
+    color: #444444 !important;          /* لون رمادي خفيف عند الهوفر */
+    transform: scale(1.15);             /* تكبير بسيط جداً لجذب الانتباه */
+}
+
+/* 3. تأمين مكان العناصر داخل الكارت */
+.pro {
+    position: relative; 
+    padding-bottom: 25px;               /* زيادة المساحة تحت عشان الأيقونة تظهر مرتاحة */
+}
+/* تنسيق العنصر الأب */
+#navbar li.dropdown {
+    position: relative;
+}
+
+/* تصميم القائمة المنسدلة نفسها */
+.dropdown-menu {
+    display: none; /* مخفية في البداية */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    min-width: 150px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    list-style: none;
+    padding: 10px 0;
+    border-radius: 4px;
+    z-index: 999;
+}
+
+/* تنسيق اللينكات جوه القائمة */
+.dropdown-menu li a {
+    color: #222 !important;
+    padding: 8px 20px !important;
+    font-size: 14px !important;
+    display: block;
+    width: 100%;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #f8f8f8;
+    color: #bc9355 !important; /* لون البراند بتاعك */
+}
+
+/* الكلاس اللي الجافا سكريبت هيضيفه عشان يفتح القائمة */
+.show-dropdown {
+    display: block !important;
+}
+
+.special-border {
+    border: 2px solid #bc9355 !important;
+    box-shadow: 0 5px 15px rgba(188, 147, 85, 0.2);
+}

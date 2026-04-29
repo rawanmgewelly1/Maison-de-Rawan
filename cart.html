@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cart - Maison de Rawan</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="loadCartData()"> <section id="header">
+        <a href="index.html"><img src="img/logo.png" class="logo" alt=""></a>
+        <ul id="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+    <a href="javascript:void(0)" id="shop-link">Shop <i class="fa fa-caret-down"></i></a>
+    <ul class="dropdown-menu" id="dropdown-menu">
+        <li><a href="shop.html?cat=Rings">Rings</a></li>
+        <li><a href="shop.html?cat=Necklace">Necklaces</a></li>
+        <li><a href="shop.html?cat=Earrings">Earrings</a></li>
+        <li><hr style="margin: 5px 0; border: 0.5px solid #eee;"></li>
+        
+        <li><a href="shop.html?type=Indian" style="color: #bc9355; font-weight: bold;">Indian Collection </a></li>
+        <li><a href="shop.html?type=Limited" style="color: #d4af37; font-weight: bold;">Limited Edition </a></li>
+        <li><hr style="margin: 5px 0; border: 0.5px solid #eee;"></li>
+        <li><a href="shop.html">View All Products</a></li>
+    </ul>
+</li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a class="active" href="cart.html"><i class="fa fa-shopping-bag"></i></a></li>
+        </ul>
+    </section>
+
+    <section id="cart" class="section-p1" style="padding: 80px;">
+        <table width="100%" style="border-collapse: collapse; text-align: center;">
+            <thead>
+                <tr style="border-bottom: 1px solid #ddd; height: 50px;">
+                    <td>Remove</td>
+                    <td>Image</td>
+                    <td>Product</td>
+                    <td>Price</td>
+                    <td>Quantity</td>
+                    <td>Subtotal</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="border-bottom: 1px solid #eee; height: 120px;">
+                    <td><i class="far fa-times-circle" onclick="clearCart()" style="cursor:pointer;"></i></td>
+                    <td><img src="img/1.jpg" width="70px" alt=""></td>
+                    <td>Heritage Gold Ring</td>
+                    <td>EGP <span id="unit-price">75000</span></td>
+                    <td><input type="number" id="cart-qty" value="1" min="1" onchange="updateTotal()" style="width: 50px; padding: 5px;"></td>
+                    <td>EGP <span id="item-subtotal">75000</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="cart-add" style="padding: 0 80px 80px 80px; display: flex; justify-content: flex-end;">
+        <div style="width: 35%; border: 1px solid #eee; padding: 30px;">
+            <h3>Cart Totals</h3>
+            <table style="width: 100%; border-collapse: collapse;">
+                <tr style="height: 40px;">
+                    <td>Cart Subtotal</td>
+                    <td>EGP <span id="final-subtotal">75000</span></td>
+                </tr>
+                <tr style="height: 40px;">
+                    <td>Shipping</td>
+                    <td>Free</td>
+                </tr>
+                <tr style="height: 50px; font-weight: bold; font-size: 18px; border-top: 1px solid #ddd;">
+                    <td>Total</td>
+                    <td>EGP <span id="final-total">75000</span></td>
+                </tr>
+            </table>
+            <button style="background: #000; color: #fff; width: 100%; padding: 15px; border: none; margin-top: 20px; cursor: pointer; text-transform: uppercase;">Checkout</button>
+        </div>
+    </section>
+
+    <script>
+function loadCartData() {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const tableBody = document.querySelector('#cart tbody');
+    const finalSubtotal = document.getElementById('final-subtotal');
+    const finalTotal = document.getElementById('final-total');
+    
+    tableBody.innerHTML = ""; // مسح البيانات القديمة (Static)
+    let totalAll = 0;
+
+    if (cart.length === 0) {
+        tableBody.innerHTML = "<tr><td colspan='6'>Your cart is empty</td></tr>";
+    } else {
+        cart.forEach((item, index) => {
+            let subtotal = item.price * item.quantity;
+            totalAll += subtotal;
+
+            tableBody.innerHTML += `
+                <tr style="border-bottom: 1px solid #eee; height: 120px;">
+                    <td><i class="far fa-times-circle" onclick="removeItem(${index})" style="cursor:pointer; color:red;"></i></td>
+                    <td><img src="${item.image}" width="70px" alt=""></td>
+                    <td>${item.name}</td>
+                    <td>EGP ${parseInt(item.price).toLocaleString()}</td>
+                    <td><input type="number" value="${item.quantity}" min="1" onchange="updateQty(${index}, this.value)" style="width: 50px; padding: 5px;"></td>
+                    <td>EGP ${subtotal.toLocaleString()}</td>
+                </tr>
+            `;
+        });
+    }
+    finalSubtotal.innerText = totalAll.toLocaleString();
+    finalTotal.innerText = totalAll.toLocaleString();
+}
+
+function updateQty(index, newQty) {
+    let cart = JSON.parse(localStorage.getItem('cart'));
+    cart[index].quantity = parseInt(newQty);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    loadCartData(); // إعادة تحميل الحسابات
+}
+
+function removeItem(index) {
+    let cart = JSON.parse(localStorage.getItem('cart'));
+    cart.splice(index, 1); // مسح المنتج من المصفوفة
+    localStorage.setItem('cart', JSON.stringify(cart));
+    loadCartData();
+}
+
+function clearCart() {
+    localStorage.removeItem('cart');
+    loadCartData();
+}
+
+// تشغيل الدالة عند التحميل
+window.onload = loadCartData;
+    </script>
+</body>
+</html>

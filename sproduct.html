@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Details - Maison de Rawan</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section id="header">
+        <a href="index.html"><img src="img/logo.png" class="logo" alt=""></a>
+        <ul id="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a class="active" href="shop.html">Shop</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="cart.html"><i class="fa fa-shopping-bag"></i></a></li>
+        </ul>
+    </section>
+
+    <section id="prodetails" class="section-p1" style="display: flex; padding: 80px; gap: 50px;">
+        <div class="single-pro-image" style="flex: 40%;">
+            <img src="img/1.jpg" width="100%" id="MainImg" alt="">
+        </div>
+        <div class="single-pro-details" style="flex: 60%;">
+            <h6 style="color: #888;">Home / Rings</h6>
+            <h2 style="font-size: 32px; padding: 20px 0;">Heritage Gold Ring</h2>
+            <h3 style="font-size: 24px; color: #bc9355; margin-bottom: 20px;">EGP 75,000</h3>
+            
+            <input type="number" id="quantityInput" value="1" min="1" style="width: 60px; height: 47px; padding: 10px; font-size: 16px; margin-right: 10px;">
+            <button onclick="addToCart()" style="background: #000; color: #fff; padding: 12px 30px; border: none; cursor: pointer;">Add To Cart</button>
+            
+            <h4 style="margin: 40px 0 20px 0;">Product Description</h4>
+            <p style="line-height: 1.8; color: #555;">Each Heritage Ring is a testament to the artisan's touch. Crafted from 18k gold, it features engravings that whisper stories of ancient ancestry, designed for the modern woman who carries her history with pride.</p>
+        </div>
+    </section>
+
+    <script>
+      function addToCart() {
+    // نجيب الكمية اللي العميل اختارها
+    let selectedQty = document.getElementById('quantityInput').value;
+    
+    // نخزنها في "ذاكرة المتصفح" تحت اسم 'cartQuantity'
+    localStorage.setItem('cartQuantity', selectedQty);
+    
+    // نروح لصفحة الكارت
+    window.location.href = 'cart.html';
+}
+    </script>
+</body>
+</html>

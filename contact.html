@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact - Maison de Rawan</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section id="header">
+        <a href="index.html"><img src="img/logo.png" class="logo" alt="brand logo"></a>
+        <ul id="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+    <a href="javascript:void(0)" id="shop-link">Shop <i class="fa fa-caret-down"></i></a>
+    <ul class="dropdown-menu" id="dropdown-menu">
+        <li><a href="shop.html?cat=Rings">Rings</a></li>
+        <li><a href="shop.html?cat=Necklace">Necklaces</a></li>
+        <li><a href="shop.html?cat=Earrings">Earrings</a></li>
+        <li><hr style="margin: 5px 0; border: 0.5px solid #eee;"></li>
+        
+        <li><a href="shop.html?type=Indian" style="color: #bc9355; font-weight: bold;">Indian Collection </a></li>
+        <li><a href="shop.html?type=Limited" style="color: #d4af37; font-weight: bold;">Limited Edition </a></li>
+        <li><hr style="margin: 5px 0; border: 0.5px solid #eee;"></li>
+        <li><a href="shop.html">View All Products</a></li>
+    </ul>
+</li>
+            <li><a href="about.html">About</a></li>
+            <li><a class="active" href="contact.html">Contact</a></li>
+            <li><a href="cart.html"><i class="fa fa-shopping-bag"></i></a></li>
+        </ul>
+    </section>
+
+    <section id="page-header" style="background-color: #f8f8f8; text-align: center; padding: 60px;">
+        <h2 style="letter-spacing: 5px; text-transform: uppercase;">#Connect_With_Us</h2>
+        <p style="font-weight: 300; color: #555;">We are delighted to welcome you to our flagship showroom.</p>
+    </section>
+
+    <section id="contact-details" class="section-p1" style="display: flex; align-items: center; justify-content: space-between; padding: 80px;">
+        <div class="details" style="width: 40%;">
+            <span style="font-size: 12px; letter-spacing: 2px; color: #888; text-transform: uppercase;">Visit Us</span>
+            <h2 style="font-size: 28px; margin: 20px 0; font-weight: 400;">Maison de Rawan - 6th of October</h2>
+            <div style="list-style: none; padding: 0;">
+                <li style="display: flex; padding: 15px 0;"><i class="fal fa-map" style="margin-right: 20px;"></i><p>Al Hosary Square, Giza, Egypt</p></li>
+                <li style="display: flex; padding: 15px 0;"><i class="fal fa-phone-alt" style="margin-right: 20px;"></i><p>+20 100 000 0000</p></li>
+            </div>
+        </div>
+        <div class="map" style="width: 55%; height: 400px;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3455.9416538356!2d30.9169!3d29.9725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjnCsDU4JzIxLjAiTiAzMMKwNTUnMDAuOCJF!5e0!3m2!1sen!2seg!4v1620000000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    </section>
+
+    <section id="form-details" style="display: flex; justify-content: space-between; padding: 80px; margin: 30px; border: 1px solid #e2e9e1;">
+        <form id="contact-form" style="width: 65%; display: flex; flex-direction: column; align-items: flex-start;">
+            <span style="font-size: 12px; letter-spacing: 2px; color: #888; text-transform: uppercase;">Send a Message</span>
+            <h2 style="font-size: 26px; padding: 20px 0; font-weight: 400;">We'd Love to Hear From You</h2>
+            
+            <input type="text" id="name" placeholder="Full Name" style="width: 100%; padding: 12px 15px; margin-bottom: 10px; border: 1px solid #e1e1e1;">
+            <p id="name-error" style="color: red; font-size: 12px; margin-bottom: 10px; display: none;">Name is required</p>
+
+            <input type="email" id="email" placeholder="Email Address" style="width: 100%; padding: 12px 15px; margin-bottom: 10px; border: 1px solid #e1e1e1;">
+            <p id="email-error" style="color: red; font-size: 12px; margin-bottom: 10px; display: none;">Email is required</p>
+            
+            <textarea id="message" cols="30" rows="10" placeholder="Your Message" style="width: 100%; padding: 12px 15px; margin-bottom: 20px; border: 1px solid #e1e1e1; resize: none;"></textarea>
+            
+            <button type="submit" class="shop-btn" style="background-color: #000; color: #fff; padding: 15px 40px; border: none; cursor: pointer; text-transform: uppercase;">Submit Message</button>
+            <p id="success-msg" style="color: green; margin-top: 15px; display: none;">Your message has been sent successfully!</p>
+        </form>
+
+        <div class="people" style="width: 30%;">
+            <div style="display: flex; align-items: flex-start;">
+                <img src="img/logo.png" style="width: 65px; height: 65px; margin-right: 15px;">
+                <p><strong>Rawan Mahmoud Gewelly</strong><br>Founder & Lead Designer</p>
+            </div>
+        </div>
+    </section>
+
+    <footer style="text-align: center; padding: 60px; border-top: 1px solid #eee;">
+        <p>© 2024 Maison de Rawan. Crafted Heritage.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
