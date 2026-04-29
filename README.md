@@ -29,21 +29,12 @@ Maison de Rawan is a high-end jewelry brand website that offers a seamless shopp
   
 ### 5. Project Structure
 project/
-├── index.html         
-# Homepage with luxury slider
-├── shop.html          
-# Products page with filtering & comparison table
-├── about.html          
-# Brand story page
-├── contact.html      
-# Contact form with validation
-├── style.css         
-# External styling (Layout, Colors, Typography)
-├── script.js        
-# Main logic (API, Validation, Cart, Slider)
-├── products.json    
-# Product data source
-├── db.json         
-# Database backup
-└── img/           
-# High-quality product imagery
+├── index.html         # Homepage with luxury slider
+├── shop.html          # Products page with filtering & comparison table
+├── about.html         # Brand story page
+├── contact.html      # Contact form with validation
+├── style.css         # External styling (Layout, Colors, Typography)
+├── script.js         # Main logic (API, Validation, Cart, Slider)
+├── products.json    # Product data source
+├── db.json         # Database backup
+└── img/           # High-quality product imagery
